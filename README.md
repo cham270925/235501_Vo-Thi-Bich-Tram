@@ -82,11 +82,28 @@ và backend.
 7. URL công khai Frontend: `https://web-235501.onrender.com`
 
 ## 8. Triển khai Backend API trên Render
-- Chưa triển khai
+### Hướng dẫn triển khai Backend (Web Service):
+1. Đăng nhập vào Render (https://dashboard.render.com).
+2. Nhấn **New +** -> **Web Service**.
+3. Kết nối repository GitHub: `https://github.com/cham270925/235501_Vo-Thi-Bich-Tram`.
+4. Cấu hình dịch vụ:
+   - **Name**: `api-235501`
+   - **Region**: `Singapore`
+   - **Root Directory**: `backend`
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `node server.js`
+   - **Health Check Path**: `/health`
+5. Thiết lập biến môi trường (Environment Variables):
+   - `PORT`: `5000`
+   - `MONGODB_URI`: `<chuỗi kết nối MongoDB Atlas>`
+6. Nhấn **Create Web Service** và lấy URL công khai.
+7. Endpoint kiểm tra hoạt động: `https://api-235501.onrender.com/health`
+8. Endpoint quản lý thiết bị: `https://api-235501.onrender.com/api/devices`
 
 ## 9. Danh sách liên kết nộp bài
 - GitHub: https://github.com/cham270925/235501_Vo-Thi-Bich-Tram
 - Docker Hub Backend: https://hub.docker.com/r/chamcham27/backend
 - Docker Hub Frontend: https://hub.docker.com/r/chamcham27/frontend
 - Render Frontend: https://web-235501.onrender.com
-- Render Backend: Chưa triển khai
+- Render Backend: https://api-235501.onrender.com

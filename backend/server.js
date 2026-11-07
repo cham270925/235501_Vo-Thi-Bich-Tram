@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const deviceRoutes = require("./routes/deviceRoutes");
 
@@ -19,10 +20,11 @@ connectDB();
 
 // Kiểm tra trạng thái Backend
 app.get("/health", (req, res) => {
+    const isDbConnected = mongoose.connection.readyState === 1;
     res.status(200).json({
         status: "OK",
         message: "Backend is running",
-        database: "MongoDB Atlas"
+        database: isDbConnected ? "Connected" : "Disconnected"
     });
 });
 
