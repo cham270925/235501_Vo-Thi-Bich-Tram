@@ -51,9 +51,24 @@ và backend.
 3. **Kiểm tra trạng thái:**
    Truy cập: `http://localhost:5000/health`
 
+## 6. Đóng gói frontend bằng Docker
+### Hướng dẫn chạy Frontend bằng Docker:
+1. **Pull image từ Docker Hub:**
+   ```bash
+   docker pull chamcham27/frontend:latest
+   ```
+2. **Khởi chạy container:**
+   ```bash
+   docker run -d -p 3000:80 \
+     --name devicecare-frontend \
+     chamcham27/frontend:latest
+   ```
+3. **Truy cập ứng dụng:**
+   Mở trình duyệt tại: `http://localhost:3000`
+
 ## 7. Triển khai
 - GitHub: https://github.com/cham270925/235501_Vo-Thi-Bich-Tram
 - Docker Hub Backend: https://hub.docker.com/r/chamcham27/backend
-- Docker Hub Frontend: Chưa triển khai
+- Docker Hub Frontend: https://hub.docker.com/r/chamcham27/frontend
 - Render Frontend: Chưa triển khai
 - Render Backend: Chưa triển khai
