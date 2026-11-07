@@ -66,9 +66,27 @@ và backend.
 3. **Truy cập ứng dụng:**
    Mở trình duyệt tại: `http://localhost:3000`
 
-## 7. Triển khai
+## 7. Triển khai Frontend trên Render
+### Hướng dẫn triển khai Frontend (Static Site / Web Service):
+1. Đăng nhập vào Render (https://dashboard.render.com).
+2. Nhấn **New +** -> **Static Site** (hoặc Web Service).
+3. Kết nối repository GitHub: `https://github.com/cham270925/235501_Vo-Thi-Bich-Tram`.
+4. Cấu hình dịch vụ:
+   - **Name**: `web-235501`
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+5. Thiết lập biến môi trường (Environment Variables):
+   - `VITE_API_URL`: `https://api-235501.onrender.com`
+6. Nhấn **Create Static Site** và chờ quá trình triển khai hoàn tất.
+7. URL công khai Frontend: `https://web-235501.onrender.com`
+
+## 8. Triển khai Backend API trên Render
+- Chưa triển khai
+
+## 9. Danh sách liên kết nộp bài
 - GitHub: https://github.com/cham270925/235501_Vo-Thi-Bich-Tram
 - Docker Hub Backend: https://hub.docker.com/r/chamcham27/backend
 - Docker Hub Frontend: https://hub.docker.com/r/chamcham27/frontend
-- Render Frontend: Chưa triển khai
+- Render Frontend: https://web-235501.onrender.com
 - Render Backend: Chưa triển khai

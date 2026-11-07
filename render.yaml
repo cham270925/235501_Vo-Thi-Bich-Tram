@@ -1,0 +1,33 @@
+services:
+  # Backend API Web Service
+  - type: web
+    name: api-235501
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+
+  # Frontend Static Site
+  - type: web
+    name: web-235501
+    runtime: static
+    plan: free
+    region: singapore
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://api-235501.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

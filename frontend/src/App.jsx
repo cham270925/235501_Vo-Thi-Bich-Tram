@@ -17,7 +17,9 @@ import {
 } from "react-icons/fi";
 import "./App.css";
 
-const API_URL = `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/devices`;
+const RAW_API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const BASE_URL = RAW_API_URL.replace(/\/+$/, "");
+const API_URL = `${BASE_URL}/api/devices`;
 
 function displayStatus(status) {
   const statusMap = {
